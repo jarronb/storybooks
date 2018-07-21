@@ -5,6 +5,16 @@ const passport = require('passport');
 const app = express();
 const port = process.env.PORT || 5000;
 
+//LOAD KEYS
+const keys = require('./config/keys');
+
+//MONGOOSE CONNECTION
+mongoose.connect(keys.monogoURI,{
+  useNewUrlParser: true
+}).then(() => {
+  console.log('MongoDB Connected')  
+}).catch(err => console.log(err));
+
 //PASSPORT CONFIG 
 require('./config/passport')(passport);
 
