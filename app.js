@@ -7,7 +7,7 @@ const port = process.env.PORT || 5000;
 
 // APP INDEX PAGE
 app.get('/', (req,res) => {
-  console.log(`It works`);
+  res.send(`It works`);
 });
 
 app.listen(port, () => {
