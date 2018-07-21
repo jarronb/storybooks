@@ -8,6 +8,8 @@ const port = process.env.PORT || 5000;
 //LOAD KEYS
 const keys = require('./config/keys');
 
+//MAP MONGOOSE PROMISE TO GLOBAL PROMISE
+mongoose.Promise = global.Promise;
 //MONGOOSE CONNECTION
 mongoose.connect(keys.monogoURI,{
   useNewUrlParser: true
